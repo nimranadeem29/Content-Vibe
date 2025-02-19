@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Subscribe for Updates!</title>
   <style>
-    /* General body styling with a gradient background */
     body {
       background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
       font-family: Arial, sans-serif;
@@ -15,8 +14,6 @@
       min-height: 100vh;
       margin: 0;
     }
-
-    /* Container for the subscription box */
     .container {
       background: #fff;
       border-radius: 15px;
@@ -25,21 +22,11 @@
       text-align: center;
       max-width: 400px;
       width: 90%;
-      animation: fadeIn 1s ease-in-out;
     }
-
-    /* Fade-in animation for a nice touch */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.8); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
     h1 {
       margin-bottom: 20px;
       color: #333;
     }
-
-    /* Styling for the email input field */
     input[type="email"] {
       padding: 10px;
       width: calc(100% - 22px);
@@ -48,8 +35,6 @@
       margin-bottom: 20px;
       font-size: 16px;
     }
-
-    /* Styling for the subscribe button */
     button {
       background-color: #ff7f50;
       color: white;
@@ -63,37 +48,15 @@
     button:hover {
       background-color: #ff6347;
     }
-
-    /* Fun element styling (emojis or extra text) */
-    .fun-element {
-      margin-top: 20px;
-      font-size: 14px;
-      color: #555;
-    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Subscribe for Updates!</h1>
-    <p>Enter your email to get the latest life updates and pictures:</p>
-    <input type="email" id="email" placeholder="Your email address" required />
-    <br />
-    <button onclick="subscribe()">Subscribe</button>
-    <div class="fun-element">🎉 Stay tuned for fun updates! 🎉</div>
+    <form action="https://formspree.io/f/xyzklbpq" method="POST">
+      <input type="email" name="email" placeholder="Your email address" required />
+      <button type="submit">Subscribe</button>
+    </form>
   </div>
-  
-  <script>
-    // Basic JavaScript function to simulate subscribing
-    function subscribe() {
-      const emailInput = document.getElementById('email');
-      const email = emailInput.value;
-      if (email) {
-        alert(`Thanks for subscribing, ${email}!`);
-        emailInput.value = '';
-      } else {
-        alert('Please enter a valid email address.');
-      }
-    }
-  </script>
 </body>
 </html>
